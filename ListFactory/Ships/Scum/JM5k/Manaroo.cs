@@ -5,7 +5,9 @@ using System.Text;
 
 namespace ListFactory.Ships
 {
-    class Manaroo
+    class Manaroo : JM5KAbstract
     {
+        public Manaroo() : base()
+        {}
     }
 }

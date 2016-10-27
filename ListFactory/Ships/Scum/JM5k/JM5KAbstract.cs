@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ListFactory.Ships.Scum.JM5k
+namespace ListFactory.Ships
 {
-    class JM5KAbstract
+    class JM5KAbstract : Baseship
     {
+        public string ElitePilotTalent { get; set; }
+
         public string Torpedo1 { get; set; }
 
         public string Torpedo2 { get; set; }
@@ -17,6 +19,9 @@ namespace ListFactory.Ships.Scum.JM5k
         public string Title { get; set; }
 
         public string Crew { get; set; }
+
+        public JM5KAbstract() : base()
+        {}
 
     }
 }

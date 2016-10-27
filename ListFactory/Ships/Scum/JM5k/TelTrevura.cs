@@ -5,7 +5,10 @@ using System.Text;
 
 namespace ListFactory.Ships
 {
-    class TelTrevura
+    class TelTrevura: JM5KAbstract
     {
+        public TelTrevura() : base()
+        {}
+
     }
 }

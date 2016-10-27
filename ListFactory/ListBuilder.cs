@@ -42,6 +42,7 @@ namespace ListFactory
             int size = pruned.Count;
             while (true)
             {
+                int debugValue = value;
                 yield return values[rand.Next(size)];
             }
         }

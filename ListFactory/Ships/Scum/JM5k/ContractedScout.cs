@@ -1,4 +1,4 @@
-﻿using ListFactory.Ships.Scum.JM5k;
+﻿using ListFactory.Ships;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,5 +8,7 @@ namespace ListFactory.JM5K
 {
     class ContractedScout : JM5KAbstract
     {
+        public ContractedScout() : base()
+        {}
     }
 }

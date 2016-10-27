@@ -9,21 +9,41 @@ namespace ListFactory.Ships
 {
     public class Baseship
     {
-        public int ShipPoints { get; set; }
-        
         public string Modification { get; set; }
-        
-        public string Name;
-        
+
+        public string Name { get; set; }
+
+        UpgradeLooper looper = new UpgradeLooper();
+
         public Baseship()
         {
+            //looper.GetListOfUpgrades<Baseship>();
+        }
+    }
 
+    public class UpgradeLooper
+    {
+        public void ListOfProp<T>()
+        {
+            ListStorage dict = new ListStorage();
+            var list = dict.ListStoraging;
+            string d = this.GetType().Name;
+            Baseship foo = new Baseship();
+            foreach (var prop in foo.GetType().GetProperties())
+            {
+                dict.ListStoraging.Add(new Tuple<Type, string, string>(typeof(T), prop.Name, ""));
+            }
+
+            foreach (var something in list)
+            {
+                Console.WriteLine(something);
+            }
         }
     }
     
     public class DictionaryStorage 
     {
-        public Dictionary<Type, int> Ships = new Dictionary<Type, int>()
+        public Dictionary<Type, int> ScumShips = new Dictionary<Type, int>()
         {
             // Firespray
              { typeof(BobaFett) , 39 }, { typeof(KathScarlett) , 38 }, { typeof(EmomAzzameen) , 36 }, { typeof(MandalorianMercenary) , 36 }, 
@@ -32,7 +52,7 @@ namespace ListFactory.Ships
              // G-1A
              {typeof(RuthlessFreelancer), 23}, {typeof(GandFindsman), 23}, {typeof(FOURLOM), 23}, {typeof(Zuckuss), 23},
              // Hawk-290             
-             {typeof(SpiceRunner), 16}, {typeof(TorkilMux), 23}, {typeof(PalobGodalhi), 23}, {typeof(DaceBonearm), 23},
+             {typeof(SpiceRunner), 16}, {typeof(TorkilMux), 19}, {typeof(PalobGodalhi), 20}, {typeof(DaceBonearm), 23},
              // JM5k             
              {typeof(ContractedScout), 25}, {typeof(Manaroo), 27}, {typeof(TelTrevura), 30}, {typeof(Dengar), 33},
              //Kihraxz Fighter             
@@ -54,5 +74,11 @@ namespace ListFactory.Ships
              // Z-95
              {typeof(BinayrePirate), 12}, {typeof(BlackSunEnforcerZ), 13}, {typeof(KaatoLeeachos), 15}, {typeof(NdruSuhlak), 17}
         };
+    }
+
+    public class ListStorage
+    {
+        public List<Tuple<Type, string, string>> ListStoraging = new List<Tuple<Type, string, string>>();
+
     }
 }

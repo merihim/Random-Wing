@@ -19,7 +19,7 @@ namespace ListFactory
         public int UpgradeBudget { get; set; }
         public double HowMuchDoWeSpendOnShips { get; set; }
 
-        public Dictionary<string, int> Ships { get; set;}
+        public Dictionary<Type, string> Ships { get; set;}
 
         public void SetPoints()
         {
@@ -33,11 +33,11 @@ namespace ListFactory
                 Console.WriteLine("Was not a valid point number");
             }
 
-           Console.WriteLine("How many points do we spend on ships?  Type 'RANDOM' if you want a random value to be input.");
+           Console.WriteLine("How many points do we spend on ships?  Type 'RANDOM' or 'R' if you want a random value to be input.");
            Console.WriteLine("WARNING: Due to the truly random nature of this program, you may end up with more or less ship points (to a max of the lowest cost ship).");
            string shipCost = Console.ReadLine();
            {
-               if (shipCost.ToLower() == "random")
+               if (shipCost.ToLower() == "random" | shipCost.ToLower() == "r")
                {
                    Random r = new Random();
                    shipCost = r.Next(60, 100).ToString();
@@ -160,61 +160,70 @@ namespace ListFactory
             SpentSoFar = SpentSoFar + pointsSpent;
             SpentOnShips = pointsSpent;
         }
-        static int ShipValues<T>(Expression<Func<T>> expr)
-        {
-            var body = ((MemberExpression)expr.Body);
-            return Convert.ToInt32(body.Member.Name);
-        }
-
-        public void ChooseShips()
-        {
-            
-        }
 
         public void FindShipOfValue()
         {
             RandomizerHelper randomDictionary = new RandomizerHelper();
             DictionaryStorage listOfShips = new DictionaryStorage();
-            Dictionary<Type, int> dict = listOfShips.Ships;
-
+            Dictionary<Type, int> dict = listOfShips.ScumShips;
+            Ships = new Dictionary<Type, string>();
             foreach (var something in randomDictionary.RandomValues(dict, ShipCost).Take(1))
             {
                 Ship1Name = something.ToString();
-                Console.Write(Ship1Name);
+                Ships.Add(something, Ship1Name);
             }
 
+            dict = listOfShips.ScumShips;
             foreach (var something in randomDictionary.RandomValues(dict, Ship2Cost).Take(1))
             {
                 Ship2Name = something.ToString();
-                Console.Write(Ship2Name);
+                Ships.Add(something, Ship2Name);
             }
 
+            dict = listOfShips.ScumShips;
             if (Ship3Cost > 0)
             {
                 foreach (var something in randomDictionary.RandomValues(dict, Ship3Cost).Take(1))
                 {
                     Ship3Name = something.ToString();
-                    Console.Write(Ship3Name);
+                    Ships.Add(something, Ship3Name);
                 }
             }
 
+            dict = listOfShips.ScumShips;
             if (Ship4Cost > 0)
             {
                 foreach (var something in randomDictionary.RandomValues(dict, Ship4Cost).Take(1))
                 {
                     Ship4Name = something.ToString();
-                    Console.Write(Ship4Name);
+                    Ships.Add(something, Ship4Name);
                 }
             }
 
+            dict = listOfShips.ScumShips;
             if (Ship5Cost > 0)
             {
                 foreach (var something in randomDictionary.RandomValues(dict, Ship5Cost).Take(1))
                 {
                     Ship5Name = something.ToString();
-                    Console.Write(Ship5Name);
+                    Ships.Add(something, Ship4Name);
                 }
             }
+            
+            foreach (string ship in Ships.Values)
+            {
+                Console.WriteLine(ship);
+            }
+        }
+
+        public void UpgradeShips()
+        {
+            Dengar dengar = new Dengar();
+            //Dictionary<Type, string> dict = Ships;
+            //foreach (Type shipName in Ships.Keys)
+            //{
+            //    object a = Activator.CreateInstance(shipName);
+            //}
         }
 
         public void CheckBudget()

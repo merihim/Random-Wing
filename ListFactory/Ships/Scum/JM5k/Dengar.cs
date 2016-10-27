@@ -5,7 +5,10 @@ using System.Text;
 
 namespace ListFactory.Ships
 {
-    class Dengar
+    class Dengar : JM5KAbstract
     {
+        public Dengar() : base()
+        {}
+
     }
 }

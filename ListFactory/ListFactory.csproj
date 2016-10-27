@@ -112,6 +112,7 @@
     <Compile Include="Upgrades\Cannon.cs" />
     <Compile Include="Upgrades\Crew.cs" />
     <Compile Include="Upgrades\ElitePilotTalent.cs" />
+    <Compile Include="Upgrades\Illicit.cs" />
     <Compile Include="Upgrades\Missile.cs" />
     <Compile Include="Upgrades\Modification.cs" />
     <Compile Include="Upgrades\SalvagedAstromech.cs" />
