@@ -1,0 +1,8 @@
+c:\users\joshw\documents\visual studio 2013\Projects\Random-Wing\Random-Wing\bin\Debug\Random-Wing.exe.config
+c:\users\joshw\documents\visual studio 2013\Projects\Random-Wing\Random-Wing\bin\Debug\Random-Wing.exe
+c:\users\joshw\documents\visual studio 2013\Projects\Random-Wing\Random-Wing\bin\Debug\Random-Wing.pdb
+c:\users\joshw\documents\visual studio 2013\Projects\Random-Wing\Random-Wing\bin\Debug\ListFactory.dll
+c:\users\joshw\documents\visual studio 2013\Projects\Random-Wing\Random-Wing\bin\Debug\ListFactory.pdb
+c:\users\joshw\documents\visual studio 2013\Projects\Random-Wing\Random-Wing\obj\Debug\Random-Wing.csprojResolveAssemblyReference.cache
+c:\users\joshw\documents\visual studio 2013\Projects\Random-Wing\Random-Wing\obj\Debug\Random-Wing.exe
+c:\users\joshw\documents\visual studio 2013\Projects\Random-Wing\Random-Wing\obj\Debug\Random-Wing.pdb
