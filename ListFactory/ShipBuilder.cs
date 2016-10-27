@@ -218,12 +218,15 @@ namespace ListFactory
 
         public void UpgradeShips()
         {
-            Dengar dengar = new Dengar();
-            //Dictionary<Type, string> dict = Ships;
-            //foreach (Type shipName in Ships.Keys)
-            //{
-            //    object a = Activator.CreateInstance(shipName);
-            //}
+            foreach (Type shipBase in Ships.Keys)
+            {
+                UpgradeLooper loop = new UpgradeLooper();
+
+                object T = Activator.CreateInstance(shipBase);
+                loop.ListOfProp<T>();
+            }
+
+            
         }
 
         public void CheckBudget()

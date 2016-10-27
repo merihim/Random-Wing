@@ -8,6 +8,8 @@ namespace ListFactory.Ships
 {
     class JM5KAbstract : Baseship
     {
+        public string ShipName = "Jump Master 5000";
+
         public string ElitePilotTalent { get; set; }
 
         public string Torpedo1 { get; set; }

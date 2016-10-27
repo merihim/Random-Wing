@@ -3,3 +3,8 @@ c:\users\joshw\documents\visual studio 2013\Projects\Random-Wing\ListFactory\bin
 c:\users\joshw\documents\visual studio 2013\Projects\Random-Wing\ListFactory\bin\Debug\ListFactory.pdb
 c:\users\joshw\documents\visual studio 2013\Projects\Random-Wing\ListFactory\obj\Debug\ListFactory.dll
 c:\users\joshw\documents\visual studio 2013\Projects\Random-Wing\ListFactory\obj\Debug\ListFactory.pdb
+C:\Users\joshw\Documents\GitHub\Random-Wing\ListFactory\obj\Debug\ListFactory.csprojResolveAssemblyReference.cache
+C:\Users\joshw\Documents\GitHub\Random-Wing\ListFactory\obj\Debug\ListFactory.dll
+C:\Users\joshw\Documents\GitHub\Random-Wing\ListFactory\bin\Debug\ListFactory.dll
+C:\Users\joshw\Documents\GitHub\Random-Wing\ListFactory\bin\Debug\ListFactory.pdb
+C:\Users\joshw\Documents\GitHub\Random-Wing\ListFactory\obj\Debug\ListFactory.pdb

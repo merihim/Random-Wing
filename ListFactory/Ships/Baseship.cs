@@ -1,6 +1,7 @@
 ﻿using ListFactory.JM5K;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,32 +13,32 @@ namespace ListFactory.Ships
         public string Modification { get; set; }
 
         public string Name { get; set; }
-
-        UpgradeLooper looper = new UpgradeLooper();
-
+        
         public Baseship()
         {
-            //looper.GetListOfUpgrades<Baseship>();
         }
     }
 
     public class UpgradeLooper
     {
-        public void ListOfProp<T>()
+        public List<Tuple<Type, string, string>> ListOfProp<T>()
         {
-            ListStorage dict = new ListStorage();
-            var list = dict.ListStoraging;
-            string d = this.GetType().Name;
-            Baseship foo = new Baseship();
+            var list = new List<Tuple<Type, string, string>>();
+
+            T foo = Activator.CreateInstance<T>();
             foreach (var prop in foo.GetType().GetProperties())
             {
-                dict.ListStoraging.Add(new Tuple<Type, string, string>(typeof(T), prop.Name, ""));
+                if (prop.Attributes.ToString() != "None")
+                {
+                    list.Add(new Tuple<Type, string, string>(typeof(T), prop.Name, ""));
+                }
+                else
+                {
+                    list.Add(new Tuple<Type, string, string>(typeof(T), prop.Name, ""));
+                }
             }
 
-            foreach (var something in list)
-            {
-                Console.WriteLine(something);
-            }
+            return list;
         }
     }
     
@@ -74,11 +75,5 @@ namespace ListFactory.Ships
              // Z-95
              {typeof(BinayrePirate), 12}, {typeof(BlackSunEnforcerZ), 13}, {typeof(KaatoLeeachos), 15}, {typeof(NdruSuhlak), 17}
         };
-    }
-
-    public class ListStorage
-    {
-        public List<Tuple<Type, string, string>> ListStoraging = new List<Tuple<Type, string, string>>();
-
     }
 }

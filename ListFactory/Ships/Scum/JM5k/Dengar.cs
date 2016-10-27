@@ -7,6 +7,8 @@ namespace ListFactory.Ships
 {
     class Dengar : JM5KAbstract
     {
+        public string PilotSkill = "9";
+
         public Dengar() : base()
         {}
 
