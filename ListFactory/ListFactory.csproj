@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ECB7F32E-99DD-4E74-AB65-CF5CF71B624D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ListFactory</RootNamespace>
+    <AssemblyName>ListFactory</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ListBuilder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShipBuilder.cs" />
+    <Compile Include="ShipOutfitter.cs" />
+    <Compile Include="Ships\Scum\G-1A\G1AAbstract.cs" />
+    <Compile Include="Ships\Scum\JM5k\JM5KAbstract.cs" />
+    <Compile Include="Ships\Scum\Lancer\AsajjVentress.cs" />
+    <Compile Include="Ships\Baseship.cs" />
+    <Compile Include="Ships\Scum\Z-95\BinayrePirate.cs" />
+    <Compile Include="Ships\Scum\Kihraxz Fighter\BlackSunAce.cs" />
+    <Compile Include="Ships\Scum\Starviper\BlackSunEnforcer.cs" />
+    <Compile Include="Ships\Scum\Z-95\BlackSunEnforcerZ.cs" />
+    <Compile Include="Ships\Scum\Starviper\BlackSunVigo.cs" />
+    <Compile Include="Ships\Scum\YV-666\Bossk.cs" />
+    <Compile Include="Ships\Scum\Kihraxz Fighter\CartelMarauder.cs" />
+    <Compile Include="Ships\Scum\M3-A\CartelSpicer.cs" />
+    <Compile Include="Ships\Scum\Protectorate Starfighter\ConcordDawnAce.cs" />
+    <Compile Include="Ships\Scum\Protectorate Starfighter\ConcordDawnVeteran.cs" />
+    <Compile Include="Ships\Scum\JM5k\ContractedScout.cs" />
+    <Compile Include="Ships\Scum\Hawk-290\DaceBonearm.cs" />
+    <Compile Include="Ships\Scum\JM5k\Dengar.cs" />
+    <Compile Include="Ships\Scum\YWing\DreaRenthal.cs" />
+    <Compile Include="Ships\Scum\Protectorate Starfighter\FennRau.cs" />
+    <Compile Include="Ships\Scum\G-1A\FOURLOM.cs" />
+    <Compile Include="Ships\Scum\G-1A\GandFindsman.cs" />
+    <Compile Include="Ships\Scum\Kihraxz Fighter\GrazTheHunter.cs" />
+    <Compile Include="Ships\Scum\Starviper\Guri.cs" />
+    <Compile Include="Ships\Scum\YWing\HiredGun.cs" />
+    <Compile Include="Ships\Scum\Z-95\KaatoLeeachos.cs" />
+    <Compile Include="Ships\Scum\Protectorate Starfighter\KadSolus.cs" />
+    <Compile Include="Ships\Scum\YWing\Kavil.cs" />
+    <Compile Include="Ships\Scum\Lancer\KetsuOnyo.cs" />
+    <Compile Include="Ships\Scum\M3-A\LaetinAshera.cs" />
+    <Compile Include="Ships\Scum\YV-666\LattsRazzi.cs" />
+    <Compile Include="Ships\Scum\JM5k\Manaroo.cs" />
+    <Compile Include="Ships\Scum\YV-666\MoraloEval.cs" />
+    <Compile Include="Ships\Scum\Z-95\NdruSuhlak.cs" />
+    <Compile Include="Ships\Scum\Protectorate Starfighter\OldTeroch.cs" />
+    <Compile Include="Ships\Scum\Hawk-290\PalobGodalhi.cs" />
+    <Compile Include="Ships\Scum\Starviper\PrinceXizor.cs" />
+    <Compile Include="Ships\Scum\G-1A\RuthlessFreelancer.cs" />
+    <Compile Include="Ships\Scum\Lancer\SabineWren.cs" />
+    <Compile Include="Ships\Scum\Aggressor\IG88A.cs" />
+    <Compile Include="Ships\Scum\Aggressor\IG88B.cs" />
+    <Compile Include="Ships\Scum\Aggressor\IG88C.cs" />
+    <Compile Include="Ships\Scum\Aggressor\IG88D.cs" />
+    <Compile Include="Ships\Scum\Aggressor\AggressorAbstract.cs" />
+    <Compile Include="Ships\Scum\Firespray\EmomAzzameen.cs" />
+    <Compile Include="Ships\Scum\Firespray\KathScarlett.cs" />
+    <Compile Include="Ships\Scum\Firespray\MandalorianMercenary.cs" />
+    <Compile Include="Ships\Scum\Firespray\BobaFett.cs" />
+    <Compile Include="Ships\Scum\Firespray\FiresprayAbstract.cs" />
+    <Compile Include="Ships\Scum\M3-A\Serissu.cs" />
+    <Compile Include="Ships\Scum\Lancer\ShadowportHunter.cs" />
+    <Compile Include="Ships\Scum\Hawk-290\SpiceRunner.cs" />
+    <Compile Include="Ships\Scum\YWing\SyndicateThug.cs" />
+    <Compile Include="Ships\Scum\Kihraxz Fighter\TalonbaneCobra.cs" />
+    <Compile Include="Ships\Scum\M3-A\TansariiPointVeteran.cs" />
+    <Compile Include="Ships\Scum\JM5k\TelTrevura.cs" />
+    <Compile Include="Ships\Scum\Hawk-290\TorkilMux.cs" />
+    <Compile Include="Ships\Scum\YV-666\TrandoshanSlaver.cs" />
+    <Compile Include="Ships\Scum\Quadjumper\UnkarPlutt.cs" />
+    <Compile Include="Ships\Scum\Protectorate Starfighter\ZealousRecruit.cs" />
+    <Compile Include="Ships\Scum\G-1A\Zuckuss.cs" />
+    <Compile Include="Upgrades\Astromech.cs" />
+    <Compile Include="Upgrades\Cannon.cs" />
+    <Compile Include="Upgrades\Crew.cs" />
+    <Compile Include="Upgrades\ElitePilotTalent.cs" />
+    <Compile Include="Upgrades\Missile.cs" />
+    <Compile Include="Upgrades\Modification.cs" />
+    <Compile Include="Upgrades\SalvagedAstromech.cs" />
+    <Compile Include="Upgrades\Systems.cs" />
+    <Compile Include="Upgrades\Torpedo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
