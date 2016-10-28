@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ListFactory.Ships
 {
-    class TrandoshanSlaver
+    class TrandoshanSlaver : YV666Abstract
     {
     }
 }

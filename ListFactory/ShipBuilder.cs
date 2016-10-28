@@ -5,6 +5,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace ListFactory
@@ -19,8 +20,99 @@ namespace ListFactory
         public int UpgradeBudget { get; set; }
         public double HowMuchDoWeSpendOnShips { get; set; }
 
-        public Dictionary<Type, string> Ships { get; set;}
+        int[] numbers {get; set; }
+        public int[] Scum = new[] { 12, 13, 14, 15, 16, 17, 18, 19, 20, 22, 23, 24, 25, 26, 27, 28, 29, 20, 31, 33, 34, 35, 36, 37, 38, 39 };
+        public int[] Rebels = new[] { 12, 13, 14, 15, 16, 17, 18, 19, 20, 22, 23, 24, 25, 26, 27, 28, 29, 20, 31, 33, 34, 35, 36, 37, 38, 39 };
+        public int[] Imperials = new[] { 12, 13, 14, 15, 16, 17, 18, 19, 20, 22, 23, 24, 25, 26, 27, 28 ,29, 20, 31, 33, 34, 35, 36, 37, 38, 39 };
+
+        public Dictionary<Type, string> Ships { get; set; }
         public List<Tuple<Type, string, string>> ShipUpgrades { get; set; }
+        public Dictionary<string, string> UpgradeRandomizer { get; set; }
+        public Dictionary<string, string> FinalList { get; set; }
+
+        public void ChooseFaction()
+        {
+            Console.Write("Please choose a faction Scum/Rebels/Imperials: ");
+            string choice = Console.ReadLine();
+
+            switch (choice)
+            {
+                case "Imperials":
+                    numbers = Imperials;
+                    Console.WriteLine("You chose the valiant Imperials");
+                    break;
+                case "I":
+                    numbers = Imperials;
+                    Console.WriteLine("You chose the valiant Imperials");
+                    break;
+                case "i":
+                    numbers = Imperials;
+                    Console.WriteLine("You chose the valiant Imperials");
+                    break;
+                case "imperials":
+                    numbers = Imperials;
+                    Console.WriteLine("You chose the valiant Imperials");
+                    break;
+                case "Rebels":
+                    numbers = Rebels;
+                    Console.WriteLine("You chose the valiant Imperials");
+                    break;
+                case "Rebel":
+                    numbers = Rebels;
+                    Console.WriteLine("You chose the dastardly Rebels");
+                    break;
+                case "rebels":
+                    numbers = Rebels;
+                    Console.WriteLine("You chose the dastardly Rebels");
+                    break;
+                case "rebel":
+                    numbers = Rebels;
+                    Console.WriteLine("You chose the dastardly Rebels");
+                    break;
+                case "R":
+                    numbers = Rebels;
+                    Console.WriteLine("You chose the dastardly Rebels");
+                    break;
+                case "r":
+                    numbers = Rebels;
+                    Console.WriteLine("You chose the dastardly Rebels");
+                    break;
+                case "Scum":
+                    numbers = Scum;
+                    Console.WriteLine("You chose the handsome Bounty Hunters");
+                    break;
+                case "Best Faction":
+                    numbers = Scum;
+                    Console.WriteLine("You chose the handsome Bounty Hunters");
+                    break;
+                case "Scub":
+                    numbers = Scum;
+                    Console.WriteLine("You chose the handsome Bounty Hunters");
+                    break;
+                case "the only faction that matters":
+                    numbers = Scum;
+                    Console.WriteLine("You chose the handsome Bounty Hunters");
+                    break;
+                case "duh":
+                    numbers = Scum;
+                    Console.WriteLine("You chose the handsome Bounty Hunters");
+                    break;
+                case "S":
+                    numbers = Scum;
+                    Console.WriteLine("You chose the handsome Bounty Hunters");
+                    break;
+                case "s":
+                    numbers = Scum;
+                    Console.WriteLine("You chose the handsome Bounty Hunters");
+                    break;
+                default:
+                    Console.WriteLine("That wasn't a valid input... Try again...  This time try typing 'Best Faction'");
+                    Console.WriteLine("");
+                    ChooseFaction();
+                    break;
+            }
+            Console.WriteLine("");
+        }
 
         public void SetPoints()
         {
@@ -31,46 +123,49 @@ namespace ListFactory
             }
             catch
             {
-                Console.WriteLine("Was not a valid point number");
+                Console.WriteLine("That was not a valid point number");
+                Console.WriteLine("");
             }
 
-           Console.WriteLine("How many points do we spend on ships?  Type 'RANDOM' or 'R' if you want a random value to be input.");
-           Console.WriteLine("WARNING: Due to the truly random nature of this program, you may end up with more or less ship points (to a max of the lowest cost ship).");
-           string shipCost = Console.ReadLine();
-           {
-               if (shipCost.ToLower() == "random" | shipCost.ToLower() == "r")
-               {
-                   Random r = new Random();
-                   shipCost = r.Next(60, 100).ToString();
+            Console.WriteLine("How many points do we spend on ships?  Type 'RANDOM' or 'R' if you want a random value to be input.");
+            Console.WriteLine("WARNING: Due to the truly random nature of this program, you may end up with more or less ship points (to a max of the lowest cost ship).");
+            string shipCost = Console.ReadLine();
+            Console.WriteLine("");
+            {
+                if (shipCost.ToLower() == "random" | shipCost.ToLower() == "r")
+                {
+                    Random r = new Random();
+                    shipCost = r.Next(60, 100).ToString();
 
-                   try
-                   {
-                       HowMuchDoWeSpendOnShips = (PointsBudget / Convert.ToInt32(shipCost));
-                       ShipBudget = (Convert.ToInt32(shipCost));
-                   }
-                   catch
-                   {
-                       Console.WriteLine("Your input for a shipcost was not valid.  Please use whole numbers or RANDOM.");
-                       SetPoints();
-                   }
+                    try
+                    {
+                        HowMuchDoWeSpendOnShips = (PointsBudget / Convert.ToInt32(shipCost));
+                        ShipBudget = (Convert.ToInt32(shipCost));
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Your input for a shipcost was not valid.  Please use whole numbers or RANDOM.");
+                        SetPoints();
+                    }
 
-               }
-               else
-               {
-                   try
-                   {
-                       HowMuchDoWeSpendOnShips = (PointsBudget / Convert.ToInt32(shipCost));
-                       ShipBudget = (Convert.ToInt32(shipCost));
-                   }
-                   catch
-                   {
-                       Console.WriteLine("Your input for a shipcost was not valid.  Please use whole numbers or RANDOM.");
-                       SetPoints();
-                   }
-               }
+                }
+                else
+                {
+                    try
+                    {
+                        HowMuchDoWeSpendOnShips = (PointsBudget / Convert.ToInt32(shipCost));
+                        ShipBudget = (Convert.ToInt32(shipCost));
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Your input for a shipcost was not valid.  Please use whole numbers or RANDOM.");
+                        SetPoints();
+                    }
+                }
 
-           }
-           Console.WriteLine(string.Format("Sounds good!  You've given us {0} points to work with.  We're going to spend {1} on ships and {2} on upgrades", PointsBudget, shipCost, PointsBudget - Convert.ToInt32(shipCost)));
+            }
+            Console.WriteLine(string.Format("Sounds good!  You've given us {0} points to work with.  We're going to spend {1} on ships and {2} on upgrades", PointsBudget, shipCost, PointsBudget - Convert.ToInt32(shipCost)));
+            Console.WriteLine("");
         }
 
         /// <summary>
@@ -83,13 +178,13 @@ namespace ListFactory
             Random r = new Random();
             if (pointsSpent < ShipBudget)
             {
-                ShipCost = r.Next(12, 39);
+                ShipCost = numbers.OrderBy(n => Guid.NewGuid()).ToArray().First();
                 pointsSpent = pointsSpent + ShipCost;
             }
 
             if (pointsSpent < ShipBudget)
             {
-                Ship2Cost = r.Next(12, 39);
+                Ship2Cost = numbers.OrderBy(n => Guid.NewGuid()).ToArray().First();
                 pointsSpent = pointsSpent + Ship2Cost;
             }
 
@@ -97,10 +192,10 @@ namespace ListFactory
             {
                 if (pointsSpent < ShipBudget - 5)
                 {
-                    shipAudit = r.Next(12, 39);
+                    shipAudit = numbers.OrderBy(n => Guid.NewGuid()).ToArray().First();
                     while (shipAudit + pointsSpent > ShipBudget + 5)
                     {
-                        shipAudit = r.Next(12, 39);
+                        shipAudit = numbers.OrderBy(n => Guid.NewGuid()).ToArray().First();
                     }
 
                     Ship3Cost = shipAudit;
@@ -112,10 +207,10 @@ namespace ListFactory
             {
                 if (pointsSpent < ShipBudget - 12)
                 {
-                    shipAudit = r.Next(12, 39);
+                    shipAudit = numbers.OrderBy(n => Guid.NewGuid()).ToArray().First();
                     while (shipAudit + pointsSpent > ShipBudget + 5)
                     {
-                        shipAudit = r.Next(12, 39);
+                        shipAudit = numbers.OrderBy(n => Guid.NewGuid()).ToArray().First();
                     }
 
                     Ship4Cost = shipAudit;
@@ -127,10 +222,10 @@ namespace ListFactory
             {
                 if (pointsSpent < ShipBudget - 12)
                 {
-                    shipAudit = r.Next(12, 39);
+                    shipAudit = numbers.OrderBy(n => Guid.NewGuid()).ToArray().First();
                     while (shipAudit + pointsSpent > ShipBudget + 5)
                     {
-                        shipAudit = r.Next(12, 39);
+                        shipAudit = numbers.OrderBy(n => Guid.NewGuid()).ToArray().First();
                     }
 
                     Ship5Cost = shipAudit;
@@ -144,16 +239,16 @@ namespace ListFactory
             {
                 Console.Write(string.Format(", {0} on ship 3", Ship3Cost.ToString()));
             }
-            
+
             if (Ship4Cost > 0)
             {
                 Console.Write(string.Format(", {0} on ship 4", Ship4Cost.ToString()));
             }
-            
+
             if (Ship5Cost > 0)
             {
                 Console.Write(string.Format(", {0} on ship 5", Ship5Cost.ToString()));
-            }                      
+            }
 
             Console.Write(".");
             Console.WriteLine("");
@@ -210,11 +305,6 @@ namespace ListFactory
                     Ships.Add(something, Ship4Name);
                 }
             }
-            
-            foreach (string ship in Ships.Values)
-            {
-                Console.WriteLine(ship);
-            }
         }
 
         public void GatherShipsForUpgrades()
@@ -222,11 +312,53 @@ namespace ListFactory
             Console.WriteLine("We've finished building your ships, now we're going to outfit them with upgrades.");
             ShipOutfitter shipOutfitter = new ShipOutfitter();
             ShipUpgrades = shipOutfitter.UpgradeShip(Ships);
-            
-            foreach (var whatever in ShipUpgrades)
+            Random rand = new Random();
+
+            UpgradeRandomizer = new Dictionary<string, string>();
+            int i = 0;
+            foreach (var UpgradeLine in ShipUpgrades)
             {
-                Console.WriteLine(whatever);
+                ++i;
+                UpgradeRandomizer.Add(UpgradeLine.Item1.ToString() + i, UpgradeLine.Item2);
             }
+
+            Console.WriteLine("The Ships are gathering in the hangar - waiting to be upgraded");
+            Console.WriteLine("");
+
+            UpgradeRandomizer =
+            UpgradeRandomizer.OrderBy(x => rand.Next())
+                .ToDictionary(item => item.Key, item => item.Value);
+            Dictionary<string, int> costDict;
+
+            FinalList = new Dictionary<string, string>();
+            foreach (var ShuffledDictionary in UpgradeRandomizer)
+            {
+                if (SpentSoFar < PointsBudget)
+                {
+                    costDict = shipOutfitter.RandomUpgrade(ShuffledDictionary.Value);
+
+                    if (costDict.Values.First() + SpentSoFar < PointsBudget)
+                    {
+                        SpentSoFar = costDict.Values.First() + SpentSoFar;
+                        SpentOnUpgrades = SpentOnUpgrades + costDict.Values.First();
+                        FinalList.Add(ShuffledDictionary.Key.ToString(), ShuffledDictionary.Value + ":  " + costDict.Keys.First());
+                    }
+                }
+            }
+        }
+
+        public void TellMeAboutThatList()
+        {
+            var sortedList = FinalList.Keys.ToList();
+            sortedList.Sort();
+
+            foreach (var key in sortedList)
+            {
+                string PilotName = key.Replace("ListFactory.Ships.", "");
+                PilotName = Regex.Replace(PilotName, "[0-9]", "");
+                Console.WriteLine("{0}, {1}", PilotName, FinalList[key]);
+            }
+
         }
 
         public void CheckBudget()

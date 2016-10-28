@@ -23,7 +23,6 @@ namespace ListFactory.Ships
         public List<Tuple<Type, string, string>> ListOfProp<T>()
         {
             var list = new List<Tuple<Type, string, string>>();
-
             T foo = Activator.CreateInstance<T>();
             foreach (var prop in foo.GetType().GetProperties())
             {
@@ -37,10 +36,10 @@ namespace ListFactory.Ships
                 }
             }
 
-            foreach (var item in list)
-            {
-                Console.WriteLine(item);
-            }
+            //foreach (var item in list)
+            //{
+            //    Console.WriteLine(item);
+            //}
 
             return list;
         }

@@ -5,7 +5,8 @@ using System.Text;
 
 namespace ListFactory.Ships
 {
-    class Guri
+    class Guri : StarviperAbstract
     {
+        public string ElitePilotTalent { get; set; }
     }
 }

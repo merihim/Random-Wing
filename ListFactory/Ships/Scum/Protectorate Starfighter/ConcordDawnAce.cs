@@ -5,7 +5,8 @@ using System.Text;
 
 namespace ListFactory.Ships
 {
-    class ConcordDawnAce
+    class ConcordDawnAce : ProtectorateAbstract
     {
+        public string ElitePilotTalent { get; set; }
     }
 }

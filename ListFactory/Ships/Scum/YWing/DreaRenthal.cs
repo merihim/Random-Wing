@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ListFactory.Ships
 {
-    class DreaRenthal
+    class DreaRenthal : YWingAbstract
     {
     }
 }

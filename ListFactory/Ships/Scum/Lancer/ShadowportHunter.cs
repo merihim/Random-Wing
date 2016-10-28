@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ListFactory.Ships
 {
-    class ShadowportHunter
+    class ShadowportHunter : AbstractLancer
     {
     }
 }

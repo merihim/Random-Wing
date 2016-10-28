@@ -22,6 +22,8 @@ namespace ListFactory.Ships
 
         public string Crew { get; set; }
 
+        public string Illicit { get; set; }
+
         public JM5KAbstract() : base()
         {}
 

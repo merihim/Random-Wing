@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ListFactory.Ships
 {
-    class LaetinAshera
+    class LaetinAshera : M3AAbstract
     {
     }
 }

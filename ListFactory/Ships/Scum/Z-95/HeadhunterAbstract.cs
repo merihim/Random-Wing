@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ListFactory.Ships
 {
-    class KihraxzAbstract : Baseship
+    class HeadhunterAbstract : Baseship
     {
-        public string Missile { get; set; }
+        public string Illict { get; set; }
 
-        public string Illicit { get; set; }        
+        public string Missile { get; set; }
     }
 }

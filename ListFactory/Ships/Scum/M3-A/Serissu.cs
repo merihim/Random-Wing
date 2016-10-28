@@ -5,7 +5,8 @@ using System.Text;
 
 namespace ListFactory.Ships
 {
-    class Serissu
+    class Serissu : M3AAbstract
     {
+        public string ElitePilotTalent { get; set; }
     }
 }

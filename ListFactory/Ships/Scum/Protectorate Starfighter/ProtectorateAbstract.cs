@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace ListFactory.Ships
 {
-    class FennRau : ProtectorateAbstract
+    class ProtectorateAbstract : Baseship
     {
-        public string ElitePilotTalent { get; set; }
+        public string Title { get; set; }
     }
 }

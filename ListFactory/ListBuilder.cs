@@ -46,5 +46,16 @@ namespace ListFactory
                 yield return values[rand.Next(size)];
             }
         }
+
+        public IEnumerable<TKey> RandomValues<TKey, TValue>(IDictionary<TKey, TValue> dict)
+        {
+            Random rand = new Random();
+            List<TKey> values = Enumerable.ToList(dict.Keys);
+            int size = dict.Count;
+            while (true)
+            {
+                yield return values[rand.Next(size)];
+            }
+        }
     }
 }

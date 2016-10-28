@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ListFactory.Ships
 {
-    class LattsRazzi
+    class LattsRazzi : YV666Abstract
     {
     }
 }

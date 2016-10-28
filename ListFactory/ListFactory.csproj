@@ -52,8 +52,15 @@
     <Compile Include="Ships\Scum\Hawk-290\HawkAbstract.cs" />
     <Compile Include="Ships\Scum\JM5k\JM5KAbstract.cs" />
     <Compile Include="Ships\Scum\Kihraxz Fighter\KihraxzAbstract.cs" />
+    <Compile Include="Ships\Scum\Lancer\AbstractLancer.cs" />
     <Compile Include="Ships\Scum\Lancer\AsajjVentress.cs" />
     <Compile Include="Ships\Baseship.cs" />
+    <Compile Include="Ships\Scum\M3-A\M3AAbstract.cs" />
+    <Compile Include="Ships\Scum\Protectorate Starfighter\ProtectorateAbstract.cs" />
+    <Compile Include="Ships\Scum\Quadjumper\QuadJumperAbstract.cs" />
+    <Compile Include="Ships\Scum\Starviper\StarviperAbstract.cs" />
+    <Compile Include="Ships\Scum\YV-666\YV666Abstract.cs" />
+    <Compile Include="Ships\Scum\YWing\YWingAbstract.cs" />
     <Compile Include="Ships\Scum\Z-95\BinayrePirate.cs" />
     <Compile Include="Ships\Scum\Kihraxz Fighter\BlackSunAce.cs" />
     <Compile Include="Ships\Scum\Starviper\BlackSunEnforcer.cs" />
@@ -74,6 +81,7 @@
     <Compile Include="Ships\Scum\Kihraxz Fighter\GrazTheHunter.cs" />
     <Compile Include="Ships\Scum\Starviper\Guri.cs" />
     <Compile Include="Ships\Scum\YWing\HiredGun.cs" />
+    <Compile Include="Ships\Scum\Z-95\HeadhunterAbstract.cs" />
     <Compile Include="Ships\Scum\Z-95\KaatoLeeachos.cs" />
     <Compile Include="Ships\Scum\Protectorate Starfighter\KadSolus.cs" />
     <Compile Include="Ships\Scum\YWing\Kavil.cs" />
