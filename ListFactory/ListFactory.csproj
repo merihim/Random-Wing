@@ -49,7 +49,9 @@
     <Compile Include="ShipBuilder.cs" />
     <Compile Include="ShipOutfitter.cs" />
     <Compile Include="Ships\Scum\G-1A\G1AAbstract.cs" />
+    <Compile Include="Ships\Scum\Hawk-290\HawkAbstract.cs" />
     <Compile Include="Ships\Scum\JM5k\JM5KAbstract.cs" />
+    <Compile Include="Ships\Scum\Kihraxz Fighter\KihraxzAbstract.cs" />
     <Compile Include="Ships\Scum\Lancer\AsajjVentress.cs" />
     <Compile Include="Ships\Baseship.cs" />
     <Compile Include="Ships\Scum\Z-95\BinayrePirate.cs" />

@@ -5,7 +5,8 @@ using System.Text;
 
 namespace ListFactory.Ships
 {
-    class GrazTheHunter
+    class GrazTheHunter : KihraxzAbstract
     {
+        public string ElitePilotTalent { get; set; }
     }
 }

@@ -1,5 +1,4 @@
-﻿using ListFactory.JM5K;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -36,6 +35,11 @@ namespace ListFactory.Ships
                 {
                     list.Add(new Tuple<Type, string, string>(typeof(T), prop.Name, ""));
                 }
+            }
+
+            foreach (var item in list)
+            {
+                Console.WriteLine(item);
             }
 
             return list;

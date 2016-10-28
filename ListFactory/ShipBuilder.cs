@@ -20,6 +20,7 @@ namespace ListFactory
         public double HowMuchDoWeSpendOnShips { get; set; }
 
         public Dictionary<Type, string> Ships { get; set;}
+        public List<Tuple<Type, string, string>> ShipUpgrades { get; set; }
 
         public void SetPoints()
         {
@@ -216,17 +217,16 @@ namespace ListFactory
             }
         }
 
-        public void UpgradeShips()
+        public void GatherShipsForUpgrades()
         {
-            foreach (Type shipBase in Ships.Keys)
-            {
-                UpgradeLooper loop = new UpgradeLooper();
-
-                object T = Activator.CreateInstance(shipBase);
-                loop.ListOfProp<T>();
-            }
-
+            Console.WriteLine("We've finished building your ships, now we're going to outfit them with upgrades.");
+            ShipOutfitter shipOutfitter = new ShipOutfitter();
+            ShipUpgrades = shipOutfitter.UpgradeShip(Ships);
             
+            foreach (var whatever in ShipUpgrades)
+            {
+                Console.WriteLine(whatever);
+            }
         }
 
         public void CheckBudget()
