@@ -238,6 +238,10 @@ namespace ListFactory
                 {
                     upgradeSorter = loop.ListOfProp<NdruSuhlak>();
                 }
+                else if (shipBase.ToString().Contains("HiredGun"))
+                {
+                    upgradeSorter = loop.ListOfProp<HiredGun>();
+                }
                 else
                 {
                     throw new Exception(string.Format("Didn't find key {0}", shipBase.ToString()));
@@ -293,6 +297,107 @@ namespace ListFactory
                     continue;
                 }
             }
+            else if (upgradeType.Contains("ElitePilotTalent"))
+            {
+                ElitePilotTalent ept = new ElitePilotTalent();
+                ShipBuilder shipB = new ShipBuilder();
+                if (shipB.CurrentFaction == "scum")
+                {
+                    foreach (var talents in ept.ScumEPT)
+                    {
+                        ept.GenEPT.Add(talents.Key, talents.Value);
+                    }
+                }
+
+                dict = ept.GenEPT;
+                Random rand = new Random();
+                numbers = new[] { 0, 1, 2, 3, 4 };
+                shuffle = numbers.OrderBy(n => Guid.NewGuid()).ToArray().First();
+                foreach (var weapon in randomDictionary.RandomValues(dict, shuffle).Take(1))
+                {
+                    upgradeName = weapon;
+                    continue;
+                }
+            }
+            else if (upgradeType.Contains("Crew"))
+            {
+                Crew crew = new Crew();
+                ShipBuilder shipB = new ShipBuilder();
+                if (shipB.CurrentFaction == "scum")
+                {
+                    foreach (var talents in crew.ScumCrew)
+                    {
+                        crew.GenCrew.Add(talents.Key, talents.Value);
+                    }
+                }
+
+                dict = crew.GenCrew;
+                Random rand = new Random();
+                numbers = new[] { 1, 2, 3, 4, 5 };
+                shuffle = numbers.OrderBy(n => Guid.NewGuid()).ToArray().First();
+                foreach (var weapon in randomDictionary.RandomValues(dict, shuffle).Take(1))
+                {
+                    upgradeName = weapon;
+                    continue;
+                }
+            }
+            else if (upgradeType.Contains("Missile"))
+            {
+                Missile missile = new Missile();
+
+                dict = missile.MissileUpgrade;
+                Random rand = new Random();
+                numbers = new[] { 1, 3, 4, 5 };
+                shuffle = numbers.OrderBy(n => Guid.NewGuid()).ToArray().First();
+                foreach (var weapon in randomDictionary.RandomValues(dict, shuffle).Take(1))
+                {
+                    upgradeName = weapon;
+                    continue;
+                }
+            }
+            else if (upgradeType.Contains("SalvagedAstromech"))
+            {
+                SalvagedAstromech astromech = new SalvagedAstromech();
+
+                dict = astromech.SalvagedAstromechs;
+                Random rand = new Random();
+                numbers = new[] { 0, 1, 2, 3 };
+                shuffle = numbers.OrderBy(n => Guid.NewGuid()).ToArray().First();
+                foreach (var weapon in randomDictionary.RandomValues(dict, shuffle).Take(1))
+                {
+                    upgradeName = weapon;
+                    continue;
+                }
+            }
+            else if (upgradeType.Contains("System"))
+            {
+                Systems system = new Systems();
+
+                dict = system.SystemsUpgrade;
+                Random rand = new Random();
+                numbers = new[] { 0, 1, 2, 3, 4 };
+                shuffle = numbers.OrderBy(n => Guid.NewGuid()).ToArray().First();
+                foreach (var weapon in randomDictionary.RandomValues(dict, shuffle).Take(1))
+                {
+                    upgradeName = weapon;
+                    continue;
+                }
+            }
+            else if (upgradeType.Contains("Modification"))
+            {
+                Modification modification = new Modification();
+
+                dict = modification.Modifications;
+                Random rand = new Random();
+                numbers = new[] { 0, 1, 2, 3, 4 };
+                shuffle = numbers.OrderBy(n => Guid.NewGuid()).ToArray().First();
+                foreach (var weapon in randomDictionary.RandomValues(dict, shuffle).Take(1))
+                {
+                    upgradeName = weapon;
+                    continue;
+                }
+            }
+
             dict = new Dictionary<string, int>();
             dict.Add(upgradeName, shuffle);
             return dict;

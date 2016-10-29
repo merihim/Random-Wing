@@ -118,7 +118,7 @@
     <Compile Include="Ships\Scum\Quadjumper\UnkarPlutt.cs" />
     <Compile Include="Ships\Scum\Protectorate Starfighter\ZealousRecruit.cs" />
     <Compile Include="Ships\Scum\G-1A\Zuckuss.cs" />
-    <Compile Include="Upgrades\Astromech.cs" />
+    <Compile Include="Upgrades\RebelAstromech.cs" />
     <Compile Include="Upgrades\Cannon.cs" />
     <Compile Include="Upgrades\Crew.cs" />
     <Compile Include="Upgrades\ElitePilotTalent.cs" />

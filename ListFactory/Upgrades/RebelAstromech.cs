@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ListFactory.Upgrades
 {
-    class Astromech
+    class RebelAstromech
     {
     }
 }

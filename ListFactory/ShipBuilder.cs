@@ -20,6 +20,8 @@ namespace ListFactory
         public int UpgradeBudget { get; set; }
         public double HowMuchDoWeSpendOnShips { get; set; }
 
+        public string CurrentFaction { get; set; }
+
         int[] numbers {get; set; }
         public int[] Scum = new[] { 12, 13, 14, 15, 16, 17, 18, 19, 20, 22, 23, 24, 25, 26, 27, 28, 29, 20, 31, 33, 34, 35, 36, 37, 38, 39 };
         public int[] Rebels = new[] { 12, 13, 14, 15, 16, 17, 18, 19, 20, 22, 23, 24, 25, 26, 27, 28, 29, 20, 31, 33, 34, 35, 36, 37, 38, 39 };
@@ -38,71 +40,88 @@ namespace ListFactory
             switch (choice)
             {
                 case "Imperials":
+                    CurrentFaction = "Imperial";
                     numbers = Imperials;
                     Console.WriteLine("You chose the valiant Imperials");
                     break;
                 case "I":
                     numbers = Imperials;
+                    CurrentFaction = "Imperial";
                     Console.WriteLine("You chose the valiant Imperials");
                     break;
                 case "i":
                     numbers = Imperials;
+                    CurrentFaction = "Imperial";
                     Console.WriteLine("You chose the valiant Imperials");
                     break;
                 case "imperials":
                     numbers = Imperials;
+                    CurrentFaction = "Imperial";
                     Console.WriteLine("You chose the valiant Imperials");
                     break;
                 case "Rebels":
                     numbers = Rebels;
+                    CurrentFaction = "Rebels";
                     Console.WriteLine("You chose the valiant Imperials");
                     break;
                 case "Rebel":
                     numbers = Rebels;
+                    CurrentFaction = "Rebels";
                     Console.WriteLine("You chose the dastardly Rebels");
                     break;
                 case "rebels":
                     numbers = Rebels;
+                    CurrentFaction = "Rebels";
                     Console.WriteLine("You chose the dastardly Rebels");
                     break;
                 case "rebel":
                     numbers = Rebels;
+                    CurrentFaction = "Rebels";
                     Console.WriteLine("You chose the dastardly Rebels");
                     break;
                 case "R":
                     numbers = Rebels;
+                    CurrentFaction = "Rebels";
                     Console.WriteLine("You chose the dastardly Rebels");
                     break;
                 case "r":
                     numbers = Rebels;
+                    CurrentFaction = "Rebels";
                     Console.WriteLine("You chose the dastardly Rebels");
                     break;
                 case "Scum":
                     numbers = Scum;
+                    CurrentFaction = "Scum";
                     Console.WriteLine("You chose the handsome Bounty Hunters");
                     break;
                 case "Best Faction":
                     numbers = Scum;
+                    CurrentFaction = "Scum";
                     Console.WriteLine("You chose the handsome Bounty Hunters");
                     break;
                 case "Scub":
                     numbers = Scum;
+                    CurrentFaction = "Scum";
                     Console.WriteLine("You chose the handsome Bounty Hunters");
                     break;
                 case "the only faction that matters":
                     numbers = Scum;
+                    CurrentFaction = "Scum";
                     Console.WriteLine("You chose the handsome Bounty Hunters");
                     break;
                 case "duh":
                     numbers = Scum;
+                    CurrentFaction = "Scum";
                     Console.WriteLine("You chose the handsome Bounty Hunters");
                     break;
                 case "S":
                     numbers = Scum;
+                    CurrentFaction = "Scum";
                     Console.WriteLine("You chose the handsome Bounty Hunters");
                     break;
                 case "s":
                     numbers = Scum;
+                    CurrentFaction = "Scum";
                     Console.WriteLine("You chose the handsome Bounty Hunters");
                     break;
                 default:
