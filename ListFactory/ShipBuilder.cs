@@ -1,4 +1,5 @@
 ﻿using ListFactory.Ships;
+using ListFactory.UniqueLayers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,13 +23,14 @@ namespace ListFactory
 
         public string CurrentFaction { get; set; }
 
-        int[] numbers {get; set; }
+        int[] arrayOfNumbers {get; set; }
+        public List<int> numbers { get; set; }
         public int[] Scum = new[] { 12, 13, 14, 15, 16, 17, 18, 19, 20, 22, 23, 24, 25, 26, 27, 28, 29, 20, 31, 33, 34, 35, 36, 37, 38, 39 };
         public int[] Rebels = new[] { 12, 13, 14, 15, 16, 17, 18, 19, 20, 22, 23, 24, 25, 26, 27, 28, 29, 20, 31, 33, 34, 35, 36, 37, 38, 39 };
         public int[] Imperials = new[] { 12, 13, 14, 15, 16, 17, 18, 19, 20, 22, 23, 24, 25, 26, 27, 28 ,29, 20, 31, 33, 34, 35, 36, 37, 38, 39 };
 
-        public Dictionary<Type, string> Ships { get; set; }
-        public List<Tuple<Type, string, string>> ShipUpgrades { get; set; }
+        public Dictionary<string, string> Ships { get; set; }
+        public List<Tuple<string, string, string>> ShipUpgrades { get; set; }
         public Dictionary<string, string> UpgradeRandomizer { get; set; }
         public Dictionary<string, string> FinalList { get; set; }
 
@@ -37,90 +39,60 @@ namespace ListFactory
             Console.Write("Please choose a faction Scum/Rebels/Imperials: ");
             string choice = Console.ReadLine();
 
-            switch (choice)
+            switch (choice.ToLower())
             {
-                case "Imperials":
+                case "imperials":
                     CurrentFaction = "Imperial";
-                    numbers = Imperials;
-                    Console.WriteLine("You chose the valiant Imperials");
-                    break;
-                case "I":
-                    numbers = Imperials;
-                    CurrentFaction = "Imperial";
+                    arrayOfNumbers = Imperials;
                     Console.WriteLine("You chose the valiant Imperials");
                     break;
                 case "i":
-                    numbers = Imperials;
+                    arrayOfNumbers = Imperials;
                     CurrentFaction = "Imperial";
                     Console.WriteLine("You chose the valiant Imperials");
-                    break;
-                case "imperials":
-                    numbers = Imperials;
-                    CurrentFaction = "Imperial";
-                    Console.WriteLine("You chose the valiant Imperials");
-                    break;
-                case "Rebels":
-                    numbers = Rebels;
-                    CurrentFaction = "Rebels";
-                    Console.WriteLine("You chose the valiant Imperials");
-                    break;
-                case "Rebel":
-                    numbers = Rebels;
-                    CurrentFaction = "Rebels";
-                    Console.WriteLine("You chose the dastardly Rebels");
                     break;
                 case "rebels":
-                    numbers = Rebels;
+                    arrayOfNumbers = Rebels;
                     CurrentFaction = "Rebels";
                     Console.WriteLine("You chose the dastardly Rebels");
                     break;
                 case "rebel":
-                    numbers = Rebels;
-                    CurrentFaction = "Rebels";
-                    Console.WriteLine("You chose the dastardly Rebels");
-                    break;
-                case "R":
-                    numbers = Rebels;
+                    arrayOfNumbers = Rebels;
                     CurrentFaction = "Rebels";
                     Console.WriteLine("You chose the dastardly Rebels");
                     break;
                 case "r":
-                    numbers = Rebels;
+                    arrayOfNumbers = Rebels;
                     CurrentFaction = "Rebels";
                     Console.WriteLine("You chose the dastardly Rebels");
                     break;
-                case "Scum":
-                    numbers = Scum;
+                case "scum":
+                    arrayOfNumbers = Scum;
                     CurrentFaction = "Scum";
                     Console.WriteLine("You chose the handsome Bounty Hunters");
                     break;
-                case "Best Faction":
-                    numbers = Scum;
+                case "best faction":
+                    arrayOfNumbers = Scum;
                     CurrentFaction = "Scum";
                     Console.WriteLine("You chose the handsome Bounty Hunters");
                     break;
-                case "Scub":
-                    numbers = Scum;
+                case "scub":
+                    arrayOfNumbers = Scum;
                     CurrentFaction = "Scum";
                     Console.WriteLine("You chose the handsome Bounty Hunters");
                     break;
                 case "the only faction that matters":
-                    numbers = Scum;
+                    arrayOfNumbers = Scum;
                     CurrentFaction = "Scum";
                     Console.WriteLine("You chose the handsome Bounty Hunters");
                     break;
                 case "duh":
-                    numbers = Scum;
-                    CurrentFaction = "Scum";
-                    Console.WriteLine("You chose the handsome Bounty Hunters");
-                    break;
-                case "S":
-                    numbers = Scum;
+                    arrayOfNumbers = Scum;
                     CurrentFaction = "Scum";
                     Console.WriteLine("You chose the handsome Bounty Hunters");
                     break;
                 case "s":
-                    numbers = Scum;
+                    arrayOfNumbers = Scum;
                     CurrentFaction = "Scum";
                     Console.WriteLine("You chose the handsome Bounty Hunters");
                     break;
@@ -190,8 +162,22 @@ namespace ListFactory
         /// <summary>
         /// Generates a number of ships that is within a range
         /// </summary>
-        public void GenerateShipValues()
+        public void GenerateShips()
         {
+            RandomizerHelper randomDictionary = new RandomizerHelper();
+            DictionaryStorage listOfShips = new DictionaryStorage();
+            UniqueList uniqueList = new UniqueList();
+            Dictionary<string, int> dict = new Dictionary<string, int>();
+            Ships = new Dictionary<string, string>();
+
+            numbers = arrayOfNumbers.ToList();
+
+            if (CurrentFaction == "Scum")
+            {
+                dict = listOfShips.ScumShips;
+
+            }
+
             int shipAudit = 0;
             int pointsSpent = 0;
             Random r = new Random();
@@ -200,11 +186,47 @@ namespace ListFactory
                 ShipCost = numbers.OrderBy(n => Guid.NewGuid()).ToArray().First();
                 pointsSpent = pointsSpent + ShipCost;
             }
+            
+            foreach (var fetchedShipName in randomDictionary.RandomValues(dict, ShipCost).Take(1))
+            {
+                Ship1Name = fetchedShipName;
+                Ships.Add("Ship 1: " + fetchedShipName, Ship1Name);
+                if (uniqueList.UniqueVar.Contains(fetchedShipName))
+                {
+                    dict.Remove(fetchedShipName);
+                    
+                    if (!dict.Values.Contains(ShipCost))
+                    {
+                        numbers.Remove(ShipCost);
+                    }
+                }
+                
+            }
 
             if (pointsSpent < ShipBudget)
             {
                 Ship2Cost = numbers.OrderBy(n => Guid.NewGuid()).ToArray().First();
                 pointsSpent = pointsSpent + Ship2Cost;
+            }
+
+
+            foreach (var fetchedShipName in randomDictionary.RandomValues(dict, Ship2Cost).Take(1))
+            {
+                Ship2Name = fetchedShipName.ToString();
+                Ships.Add("Ship 2: " + fetchedShipName, Ship2Name);
+                if (uniqueList.UniqueVar.Contains(fetchedShipName))
+                {
+                    dict.Remove(fetchedShipName);
+                    if (uniqueList.UniqueVar.Contains(fetchedShipName))
+                    {
+                        dict.Remove(fetchedShipName);
+
+                        if (!dict.Values.Contains(ShipCost))
+                        {
+                            numbers.Remove(ShipCost);
+                        }
+                    }
+                }
             }
 
             if (pointsSpent < ShipBudget)
@@ -222,6 +244,24 @@ namespace ListFactory
                 }
             }
 
+            if (Ship3Cost > 0)
+            {
+                foreach (var fetchedShipName in randomDictionary.RandomValues(dict, Ship3Cost).Take(1))
+                {
+                    Ship3Name = fetchedShipName.ToString();
+                    Ships.Add("Ship 3: " + fetchedShipName, Ship3Name);
+                    if (uniqueList.UniqueVar.Contains(fetchedShipName))
+                    {
+                        dict.Remove(fetchedShipName);
+
+                        if (!dict.Values.Contains(ShipCost))
+                        {
+                            numbers.Remove(ShipCost);
+                        }
+                    }
+                }
+            }
+            
             if (pointsSpent < ShipBudget)
             {
                 if (pointsSpent < ShipBudget - 12)
@@ -234,6 +274,24 @@ namespace ListFactory
 
                     Ship4Cost = shipAudit;
                     pointsSpent = pointsSpent + Ship4Cost;
+                }
+            }
+
+            if (Ship4Cost > 0)
+            {
+                foreach (var fetchedShipName in randomDictionary.RandomValues(dict, Ship4Cost).Take(1))
+                {
+                    Ship4Name = fetchedShipName.ToString();
+                    Ships.Add("Ship 4: " + fetchedShipName, Ship4Name);
+                    if (uniqueList.UniqueVar.Contains(fetchedShipName))
+                    {
+                        dict.Remove(fetchedShipName);
+
+                        if (!dict.Values.Contains(ShipCost))
+                        {
+                            numbers.Remove(ShipCost);
+                        }
+                    }
                 }
             }
 
@@ -251,6 +309,25 @@ namespace ListFactory
                     pointsSpent = pointsSpent + Ship5Cost;
                 }
             }
+
+            if (Ship5Cost > 0)
+            {
+                foreach (var fetchedShipName in randomDictionary.RandomValues(dict, Ship5Cost).Take(1))
+                {
+                    Ship5Name = fetchedShipName.ToString();
+                    Ships.Add("Ship 5: " + fetchedShipName, Ship4Name);
+                    if (uniqueList.UniqueVar.Contains(fetchedShipName))
+                    {
+                        dict.Remove(fetchedShipName);
+
+                        if (!dict.Values.Contains(ShipCost))
+                        {
+                            numbers.Remove(ShipCost);
+                        }
+                    }
+                }
+            }
+
             Console.WriteLine("");
             Console.Write(string.Format("We finished building your ships.  We will be spending {0} on Ship 1, {1} on ship 2", ShipCost.ToString(), Ship2Cost.ToString()));
 
@@ -276,56 +353,6 @@ namespace ListFactory
             SpentOnShips = pointsSpent;
         }
 
-        public void FindShipOfValue()
-        {
-            RandomizerHelper randomDictionary = new RandomizerHelper();
-            DictionaryStorage listOfShips = new DictionaryStorage();
-            Dictionary<Type, int> dict = listOfShips.ScumShips;
-            Ships = new Dictionary<Type, string>();
-            foreach (var something in randomDictionary.RandomValues(dict, ShipCost).Take(1))
-            {
-                Ship1Name = something.ToString();
-                Ships.Add(something, Ship1Name);
-            }
-
-            dict = listOfShips.ScumShips;
-            foreach (var something in randomDictionary.RandomValues(dict, Ship2Cost).Take(1))
-            {
-                Ship2Name = something.ToString();
-                Ships.Add(something, Ship2Name);
-            }
-
-            dict = listOfShips.ScumShips;
-            if (Ship3Cost > 0)
-            {
-                foreach (var something in randomDictionary.RandomValues(dict, Ship3Cost).Take(1))
-                {
-                    Ship3Name = something.ToString();
-                    Ships.Add(something, Ship3Name);
-                }
-            }
-
-            dict = listOfShips.ScumShips;
-            if (Ship4Cost > 0)
-            {
-                foreach (var something in randomDictionary.RandomValues(dict, Ship4Cost).Take(1))
-                {
-                    Ship4Name = something.ToString();
-                    Ships.Add(something, Ship4Name);
-                }
-            }
-
-            dict = listOfShips.ScumShips;
-            if (Ship5Cost > 0)
-            {
-                foreach (var something in randomDictionary.RandomValues(dict, Ship5Cost).Take(1))
-                {
-                    Ship5Name = something.ToString();
-                    Ships.Add(something, Ship4Name);
-                }
-            }
-        }
-
         public void GatherShipsForUpgrades()
         {
             Console.WriteLine("We've finished building your ships, now we're going to outfit them with upgrades.");
@@ -334,7 +361,7 @@ namespace ListFactory
             Random rand = new Random();
 
             UpgradeRandomizer = new Dictionary<string, string>();
-            int i = 0;
+            int i = 10;
             foreach (var UpgradeLine in ShipUpgrades)
             {
                 ++i;
@@ -374,7 +401,7 @@ namespace ListFactory
             foreach (var key in sortedList)
             {
                 string PilotName = key.Replace("ListFactory.Ships.", "");
-                PilotName = Regex.Replace(PilotName, "[0-9]", "");
+                PilotName = PilotName.Substring(0, PilotName.Length - 2);
                 Console.WriteLine("{0}, {1}", PilotName, FinalList[key]);
             }
 

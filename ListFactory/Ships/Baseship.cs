@@ -10,9 +10,7 @@ namespace ListFactory.Ships
     public class Baseship
     {
         public string Modification { get; set; }
-
-        public string Name { get; set; }
-        
+                
         public Baseship()
         {
         }
@@ -20,26 +18,21 @@ namespace ListFactory.Ships
 
     public class UpgradeLooper
     {
-        public List<Tuple<Type, string, string>> ListOfProp<T>()
+        public List<Tuple<string, string, string>> ListOfProp<T>(string Name)
         {
-            var list = new List<Tuple<Type, string, string>>();
+            var list = new List<Tuple<string, string, string>>();
             T foo = Activator.CreateInstance<T>();
             foreach (var prop in foo.GetType().GetProperties())
             {
                 if (prop.Attributes.ToString() != "None")
                 {
-                    list.Add(new Tuple<Type, string, string>(typeof(T), prop.Name, ""));
+                    list.Add(new Tuple<string, string, string>(Name, prop.Name, ""));
                 }
                 else
                 {
-                    list.Add(new Tuple<Type, string, string>(typeof(T), prop.Name, ""));
+                    list.Add(new Tuple<string, string, string>(Name, prop.Name, prop.Attributes.ToString()));
                 }
             }
-
-            //foreach (var item in list)
-            //{
-            //    Console.WriteLine(item);
-            //}
 
             return list;
         }
@@ -47,36 +40,36 @@ namespace ListFactory.Ships
     
     public class DictionaryStorage 
     {
-        public Dictionary<Type, int> ScumShips = new Dictionary<Type, int>()
+        public Dictionary<string, int> ScumShips = new Dictionary<string, int>()
         {
             // Firespray
-             { typeof(BobaFett) , 39 }, { typeof(KathScarlett) , 38 }, { typeof(EmomAzzameen) , 36 }, { typeof(MandalorianMercenary) , 36 }, 
+             { "Boba Fett" , 39 }, { "Kath Scarlett" , 38 }, { "Emom Azzameen" , 36 }, { "Mandalorian Mercenary" , 36 }, 
              // Aggressor
-             { typeof(IG88A) , 36 }, { typeof(IG88B) , 36 }, { typeof(IG88C) , 36 }, { typeof(IG88D) , 36 },
+             { "IG88A" , 36 }, { "IG88B" , 36 }, { "IG88C" , 36 }, { "IG88D" , 36 },
              // G-1A
-             {typeof(RuthlessFreelancer), 23}, {typeof(GandFindsman), 23}, {typeof(FOURLOM), 23}, {typeof(Zuckuss), 23},
+             { "Ruthless Freelancer", 23}, { "GandFindsman", 23}, { "4-Lom", 23}, { "Zuckuss", 28},
              // Hawk-290             
-             {typeof(SpiceRunner), 16}, {typeof(TorkilMux), 19}, {typeof(PalobGodalhi), 20}, {typeof(DaceBonearm), 23},
+             { "Spice Runner", 16}, { "Torkil Mux", 19}, { "PalobGodalhi", 20}, { "Dace Bonearm", 23},
              // JM5k             
-             {typeof(ContractedScout), 25}, {typeof(Manaroo), 27}, {typeof(TelTrevura), 30}, {typeof(Dengar), 33},
+             { "Contracted Scout", 25}, { "Manaroo", 27}, { "Tel Trevura", 30}, { "Dengar", 33},
              //Kihraxz Fighter             
-             {typeof(CartelMarauder), 20}, {typeof(BlackSunAce), 23}, {typeof(GrazTheHunter), 25}, {typeof(TalonbaneCobra), 28},
+             { "Cartel Marauder", 20}, { "Black Sun Ace", 23}, { "Graz the Hunter", 25}, { "Talonbane Cobra", 28},
              // Lancer-Class Pursuit Craft
-             {typeof(ShadowportHunter), 33}, {typeof(SabineWren), 35}, {typeof(AsajjVentress), 37}, {typeof(KetsuOnyo), 38},
+             { "Shadowport Hunter", 33},  { "Sabine Wren", 35}, { "Asajj Ventress", 37}, { "Ketsu Onyo", 38},
              // M3-A Interceptor
-             {typeof(CartelSpicer), 14}, {typeof(TansariiPointVeteran), 17}, {typeof(LaetinAshera), 18}, {typeof(Serissu), 20},
+             { "Cartel Spicer", 14}, { "Tansarii Point Veteran", 17}, { "Laetin Ashera", 18}, { "Serissu", 20},
              // Protectorate Starfighter
-             {typeof(ZealousRecruit), 20}, {typeof(ConcordDawnVeteran), 22}, {typeof(ConcordDawnAce), 23}, {typeof(KadSolus), 25}, {typeof(OldTeroch), 26}, {typeof(FennRau), 28},
+             { "Zealous Recruit", 20}, { "Concord Dawn Veteran", 22}, { "Concord Dawn Ace", 23}, { "KadSolus", 25}, { "Old Teroch", 26}, { "Fenn Rau", 28},
              // Quadjumper
-             {typeof(UnkarPlutt), 17},
+             { "Unkar Plutt", 17},
              // Starviper
-             {typeof(BlackSunEnforcer), 25}, {typeof(BlackSunVigo), 27}, {typeof(Guri), 30}, {typeof(PrinceXizor), 31},
+             { "Black Sun Enforcer", 25}, { "Black Sun Vigo", 27}, { "Guri", 30}, { "Prince Xizor", 31},
              // Y Wing
-             {typeof(SyndicateThug), 18}, {typeof(HiredGun), 20}, {typeof(DreaRenthal), 22}, {typeof(Kavil), 24},
+             { "Syndicate Thug", 18}, { "Hired Gun", 20}, { "Drea Renthal", 22}, { "Kavil", 24},
              // YV-666
-             {typeof(TrandoshanSlaver), 29}, {typeof(LattsRazzi), 33}, {typeof(MoraloEval), 34}, {typeof(Bossk), 35},
+             { "Trandoshan Slaver", 29}, { "LattsRazzi", 33}, { "Moralo Eval", 34}, { "Bossk", 35},
              // Z-95
-             {typeof(BinayrePirate), 12}, {typeof(BlackSunEnforcerZ), 13}, {typeof(KaatoLeeachos), 15}, {typeof(NdruSuhlak), 17}
+             { "Binayre Pirate", 12}, { "Black Sun Enforcer Z-95", 13}, { "Kaato Leeachos", 15}, { "N'dru Suhlak", 17}
         };
     }
 }

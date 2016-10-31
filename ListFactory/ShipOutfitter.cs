@@ -10,237 +10,237 @@ namespace ListFactory
 {
     public class ShipOutfitter : ListBuilder
     {
-        public List<Tuple<Type, string, string>> upgradeSorter { get; set; }
+        public List<Tuple<string, string, string>> upgradeSorter { get; set; }
 
-        public List<Tuple<Type, string, string>> UpgradeShip(Dictionary<Type, string> storedShips)
+        public List<Tuple<string, string, string>> UpgradeShip(Dictionary<string, string> storedShips)
         {
             UpgradeLooper loop = new UpgradeLooper();
-            upgradeSorter = new List<Tuple<Type, string, string>>();
-            var upgradeList = new List<Tuple<Type, string, string>>();
-            foreach (Type shipBase in storedShips.Keys)
+            upgradeSorter = new List<Tuple<string, string, string>>();
+            var upgradeList = new List<Tuple<string, string, string>>();
+            foreach (string shipBase in storedShips.Keys)
             {
                 string shipbase = shipBase.ToString();
                 string shipPP = shipbase;
 
                 if (shipBase.ToString().Contains("Dengar"))
                 {
-                    upgradeSorter = loop.ListOfProp<Dengar>();
+                    upgradeSorter = loop.ListOfProp<Dengar>(shipBase);
                 }
                 else if (shipBase.ToString().Contains("IG88A"))
                 {
-                    upgradeSorter = loop.ListOfProp<IG88A>();
+                    upgradeSorter = loop.ListOfProp<IG88A>(shipBase);
                 }
                 else if (shipBase.ToString().Contains("IG88B"))
                 {
-                    upgradeSorter = loop.ListOfProp<IG88B>();
+                    upgradeSorter = loop.ListOfProp<IG88B>(shipBase);
                 }
                 else if (shipBase.ToString().Contains("IG88C"))
                 {
-                    upgradeSorter = loop.ListOfProp<IG88C>();
+                    upgradeSorter = loop.ListOfProp<IG88C>(shipBase);
                 }
                 else if (shipBase.ToString().Contains("IG88D"))
                 {
-                    upgradeSorter = loop.ListOfProp<IG88B>();
+                    upgradeSorter = loop.ListOfProp<IG88B>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("BobaFett"))
+                else if (shipBase.ToString().Contains("Boba Fett"))
                 {
-                    upgradeSorter = loop.ListOfProp<BobaFett>();
+                    upgradeSorter = loop.ListOfProp<BobaFett>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("EmomAzzameen"))
+                else if (shipBase.ToString().Contains("Emom Azzameen"))
                 {
-                    upgradeSorter = loop.ListOfProp<EmomAzzameen>();
+                    upgradeSorter = loop.ListOfProp<EmomAzzameen>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("KathScarlett"))
+                else if (shipBase.ToString().Contains("Kath Scarlett"))
                 {
-                    upgradeSorter = loop.ListOfProp<KathScarlett>();
+                    upgradeSorter = loop.ListOfProp<KathScarlett>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("MandalorianMercenary"))
+                else if (shipBase.ToString().Contains("Mandalorian Mercenary"))
                 {
-                    upgradeSorter = loop.ListOfProp<MandalorianMercenary>();
+                    upgradeSorter = loop.ListOfProp<MandalorianMercenary>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("FOURLOM"))
+                else if (shipBase.ToString().Contains("4-Lom"))
                 {
-                    upgradeSorter = loop.ListOfProp<FOURLOM>();
+                    upgradeSorter = loop.ListOfProp<FOURLOM>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("GandFindsman"))
+                else if (shipBase.ToString().Contains("Gand Findsman"))
                 {
-                    upgradeSorter = loop.ListOfProp<GandFindsman>();
+                    upgradeSorter = loop.ListOfProp<GandFindsman>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("RuthlessFreelancer"))
+                else if (shipBase.ToString().Contains("Ruthless Freelancer"))
                 {
-                    upgradeSorter = loop.ListOfProp<RuthlessFreelancer>();
+                    upgradeSorter = loop.ListOfProp<RuthlessFreelancer>(shipBase);
                 }
                 else if (shipBase.ToString().Contains("Zuckuss"))
                 {
-                    upgradeSorter = loop.ListOfProp<Zuckuss>();
+                    upgradeSorter = loop.ListOfProp<Zuckuss>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("DaceBonearm"))
+                else if (shipBase.ToString().Contains("Dace Bonearm"))
                 {
-                    upgradeSorter = loop.ListOfProp<DaceBonearm>();
+                    upgradeSorter = loop.ListOfProp<DaceBonearm>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("PalobGodalhi"))
+                else if (shipBase.ToString().Contains("Palob Godalhi"))
                 {
-                    upgradeSorter = loop.ListOfProp<PalobGodalhi>();
+                    upgradeSorter = loop.ListOfProp<PalobGodalhi>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("SpiceRunner"))
+                else if (shipBase.ToString().Contains("Spice Runner"))
                 {
-                    upgradeSorter = loop.ListOfProp<SpiceRunner>();
+                    upgradeSorter = loop.ListOfProp<SpiceRunner>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("TorkilMux"))
+                else if (shipBase.ToString().Contains("Torkil Mux"))
                 {
-                    upgradeSorter = loop.ListOfProp<TorkilMux>();
+                    upgradeSorter = loop.ListOfProp<TorkilMux>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("ContractedScout"))
+                else if (shipBase.ToString().Contains("Contracted Scout"))
                 {
-                    upgradeSorter = loop.ListOfProp<ContractedScout>();
+                    upgradeSorter = loop.ListOfProp<ContractedScout>(shipBase);
                 }
                 else if (shipBase.ToString().Contains("Manaroo"))
                 {
-                    upgradeSorter = loop.ListOfProp<Manaroo>();
+                    upgradeSorter = loop.ListOfProp<Manaroo>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("TelTrevura"))
+                else if (shipBase.ToString().Contains("Tel Trevura"))
                 {
-                    upgradeSorter = loop.ListOfProp<TelTrevura>();
+                    upgradeSorter = loop.ListOfProp<TelTrevura>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("BlackSunAce"))
+                else if (shipBase.ToString().Contains("Black Sun Ace"))
                 {
-                    upgradeSorter = loop.ListOfProp<BlackSunAce>();
+                    upgradeSorter = loop.ListOfProp<BlackSunAce>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("CartelMarauder"))
+                else if (shipBase.ToString().Contains("Cartel Marauder"))
                 {
-                    upgradeSorter = loop.ListOfProp<CartelMarauder>();
+                    upgradeSorter = loop.ListOfProp<CartelMarauder>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("GrazTheHunter"))
+                else if (shipBase.ToString().Contains("Graz the Hunter"))
                 {
-                    upgradeSorter = loop.ListOfProp<GrazTheHunter>();
+                    upgradeSorter = loop.ListOfProp<GrazTheHunter>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("TalonbaneCobra"))
+                else if (shipBase.ToString().Contains("Talonbane Cobra"))
                 {
-                    upgradeSorter = loop.ListOfProp<TalonbaneCobra>();
+                    upgradeSorter = loop.ListOfProp<TalonbaneCobra>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("AsajjVentress"))
+                else if (shipBase.ToString().Contains("Asajj Ventress"))
                 {
-                    upgradeSorter = loop.ListOfProp<AsajjVentress>();
+                    upgradeSorter = loop.ListOfProp<AsajjVentress>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("KetsuOnyo"))
+                else if (shipBase.ToString().Contains("Ketsu Onyo"))
                 {
-                    upgradeSorter = loop.ListOfProp<KetsuOnyo>();
+                    upgradeSorter = loop.ListOfProp<KetsuOnyo>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("SabineWren"))
+                else if (shipBase.ToString().Contains("Sabine Wren"))
                 {
-                    upgradeSorter = loop.ListOfProp<SabineWren>();
+                    upgradeSorter = loop.ListOfProp<SabineWren>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("ShadowportHunter"))
+                else if (shipBase.ToString().Contains("Shadowport Hunter"))
                 {
-                    upgradeSorter = loop.ListOfProp<ShadowportHunter>();
+                    upgradeSorter = loop.ListOfProp<ShadowportHunter>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("CartelSpicer"))
+                else if (shipBase.ToString().Contains("Cartel Spicer"))
                 {
-                    upgradeSorter = loop.ListOfProp<CartelSpicer>();
+                    upgradeSorter = loop.ListOfProp<CartelSpicer>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("LaetinAshera"))
+                else if (shipBase.ToString().Contains("Laetin Ashera"))
                 {
-                    upgradeSorter = loop.ListOfProp<LaetinAshera>();
+                    upgradeSorter = loop.ListOfProp<LaetinAshera>(shipBase);
                 }
                 else if (shipBase.ToString().Contains("Serissu"))
                 {
-                    upgradeSorter = loop.ListOfProp<Serissu>();
+                    upgradeSorter = loop.ListOfProp<Serissu>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("TansariiPointVeteran"))
+                else if (shipBase.ToString().Contains("Tansarii Point Veteran"))
                 {
-                    upgradeSorter = loop.ListOfProp<TansariiPointVeteran>();
+                    upgradeSorter = loop.ListOfProp<TansariiPointVeteran>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("ConcordDawnAce"))
+                else if (shipBase.ToString().Contains("Concord Dawn Ace"))
                 {
-                    upgradeSorter = loop.ListOfProp<ConcordDawnAce>();
+                    upgradeSorter = loop.ListOfProp<ConcordDawnAce>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("ConcordDawnVeteran"))
+                else if (shipBase.ToString().Contains("Concord Dawn Veteran"))
                 {
-                    upgradeSorter = loop.ListOfProp<ConcordDawnVeteran>();
+                    upgradeSorter = loop.ListOfProp<ConcordDawnVeteran>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("FennRau"))
+                else if (shipBase.ToString().Contains("Fenn Rau"))
                 {
-                    upgradeSorter = loop.ListOfProp<FennRau>();
+                    upgradeSorter = loop.ListOfProp<FennRau>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("KadSolus"))
+                else if (shipBase.ToString().Contains("Kad Solus"))
                 {
-                    upgradeSorter = loop.ListOfProp<KadSolus>();
+                    upgradeSorter = loop.ListOfProp<KadSolus>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("OldTeroch"))
+                else if (shipBase.ToString().Contains("Old Teroch"))
                 {
-                    upgradeSorter = loop.ListOfProp<OldTeroch>();
+                    upgradeSorter = loop.ListOfProp<OldTeroch>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("ZealousRecruit"))
+                else if (shipBase.ToString().Contains("Zealous Recruit"))
                 {
-                    upgradeSorter = loop.ListOfProp<ZealousRecruit>();
+                    upgradeSorter = loop.ListOfProp<ZealousRecruit>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("UnkarPlutt"))
+                else if (shipBase.ToString().Contains("Unkar Plutt"))
                 {
-                    upgradeSorter = loop.ListOfProp<UnkarPlutt>();
+                    upgradeSorter = loop.ListOfProp<UnkarPlutt>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("BlackSunEnforcer"))
+                else if (shipBase.ToString().Contains("Black Sun Enforcer Z-95"))
                 {
-                    upgradeSorter = loop.ListOfProp<BlackSunEnforcer>();
+                    upgradeSorter = loop.ListOfProp<BlackSunEnforcerZ>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("BlackSunVigo"))
+                else if (shipBase.ToString().Contains("Black Sun Enforcer"))
                 {
-                    upgradeSorter = loop.ListOfProp<BlackSunVigo>();
+                    upgradeSorter = loop.ListOfProp<BlackSunEnforcer>(shipBase);
+                }
+                else if (shipBase.ToString().Contains("Black Sun Vigo"))
+                {
+                    upgradeSorter = loop.ListOfProp<BlackSunVigo>(shipBase);
                 }
                 else if (shipBase.ToString().Contains("Guri"))
                 {
-                    upgradeSorter = loop.ListOfProp<Guri>();
+                    upgradeSorter = loop.ListOfProp<Guri>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("PrinceXizor"))
+                else if (shipBase.ToString().Contains("Prince Xizor"))
                 {
-                    upgradeSorter = loop.ListOfProp<PrinceXizor>();
+                    upgradeSorter = loop.ListOfProp<PrinceXizor>(shipBase);
                 }
                 else if (shipBase.ToString().Contains("Bossk"))
                 {
-                    upgradeSorter = loop.ListOfProp<Bossk>();
+                    upgradeSorter = loop.ListOfProp<Bossk>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("LattsRazzi"))
+                else if (shipBase.ToString().Contains("Latts Razzi"))
                 {
-                    upgradeSorter = loop.ListOfProp<LattsRazzi>();
+                    upgradeSorter = loop.ListOfProp<LattsRazzi>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("MoraloEval"))
+                else if (shipBase.ToString().Contains("Moralo Eval"))
                 {
-                    upgradeSorter = loop.ListOfProp<MoraloEval>();
+                    upgradeSorter = loop.ListOfProp<MoraloEval>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("TrandoshanSlaver"))
+                else if (shipBase.ToString().Contains("Trandoshan Slaver"))
                 {
-                    upgradeSorter = loop.ListOfProp<TrandoshanSlaver>();
+                    upgradeSorter = loop.ListOfProp<TrandoshanSlaver>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("DreaRenthal"))
+                else if (shipBase.ToString().Contains("Drea Renthal"))
                 {
-                    upgradeSorter = loop.ListOfProp<DreaRenthal>();
+                    upgradeSorter = loop.ListOfProp<DreaRenthal>(shipBase);
                 }
                 else if (shipBase.ToString().Contains("Kavil"))
                 {
-                    upgradeSorter = loop.ListOfProp<Kavil>();
+                    upgradeSorter = loop.ListOfProp<Kavil>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("SyndicateThug"))
+                else if (shipBase.ToString().Contains("Syndicate Thug"))
                 {
-                    upgradeSorter = loop.ListOfProp<SyndicateThug>();
+                    upgradeSorter = loop.ListOfProp<SyndicateThug>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("BinayrePirate"))
+                else if (shipBase.ToString().Contains("Binayre Pirate"))
                 {
-                    upgradeSorter = loop.ListOfProp<BinayrePirate>();
+                    upgradeSorter = loop.ListOfProp<BinayrePirate>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("BlackSunEnforcerZ"))
+                else if (shipBase.ToString().Contains("Kaato Leeachos"))
                 {
-                    upgradeSorter = loop.ListOfProp<BlackSunEnforcerZ>();
+                    upgradeSorter = loop.ListOfProp<KaatoLeeachos>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("KaatoLeeachos"))
+                else if (shipBase.ToString().Contains("N'dru Suhlak"))
                 {
-                    upgradeSorter = loop.ListOfProp<KaatoLeeachos>();
+                    upgradeSorter = loop.ListOfProp<NdruSuhlak>(shipBase);
                 }
-                else if (shipBase.ToString().Contains("NdruSuhlak"))
+                else if (shipBase.ToString().Contains("Hired Gun"))
                 {
-                    upgradeSorter = loop.ListOfProp<NdruSuhlak>();
-                }
-                else if (shipBase.ToString().Contains("HiredGun"))
-                {
-                    upgradeSorter = loop.ListOfProp<HiredGun>();
+                    upgradeSorter = loop.ListOfProp<HiredGun>(shipBase);
                 }
                 else
                 {
@@ -328,6 +328,18 @@ namespace ListFactory
                     foreach (var talents in crew.ScumCrew)
                     {
                         crew.GenCrew.Add(talents.Key, talents.Value);
+                    }                    
+                }
+                
+                foreach (string pilotName in shipB.Ships.Keys)
+                {
+                    try
+                    {
+                        crew.GenCrew.Remove(pilotName);
+                    }
+                    catch
+                    {
+                        Console.WriteLine(string.Format("Attempted to remove {0} from the crew list, but didn't find them as an available crew.", pilotName));
                     }
                 }
 
