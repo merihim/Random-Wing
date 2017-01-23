@@ -14,6 +14,16 @@ namespace ListFactory.UniqueLayers
 
         "Torkil Mux", "Manaroo", "Tel Trevura", "Graz the Hunter", "Talonbane Cobra", "Sabine Wren", "Laetin Ashera", "Serissu", "Fenn Rau",
 
-        "Kad Solus", "Old Teroch", "Unkar Plutt", "Guri", "Prince Xizor", "Bossk", "Latts Razzi", "Moralo Eval", "Kavil", "Drea Rentha", " Kaato Leeachos", "N'dru Suhlak" } );
+        "Kad Solus", "Old Teroch", "Unkar Plutt", "Guri", "Prince Xizor", "Bossk", "Latts Razzi", "Moralo Eval", "Kavil", "Drea Rentha", " Kaato Leeachos",
+        
+        "N'dru Suhlak", "Krassis Trelix",  "Captain Kagi", "Captain Yorr", "Colonel Jendon", "Maarek Steele", "Darth Vader", "Commander Alozen", "Juno Eclipse", 
+        
+        "Zertik Strom", "The Inquisitor", "Valen Rudor", "Tomax Bren", "Major Rhymer", "Deathfire", "Captain Jonus", "Colonel Vessery", "Countess Ryad",
+        
+        "Rexler Brath", "Backstabber", "Chaser", "Dark Curse", "Howlrunner", "Mauler Mithel", "Night Beast", "Scourge", "Wampa", "Winged Gundark", "Youngster",
+        
+        "Epsilon Ace", "Zeta Ace", "Omega Ace", "Carnor Jax", "Fels Wrath", "Kir Kanos", "Lieutenant Lorrir", "Soontir Fel", "Tetran Cowall", "Turr Phennir",
+        
+        "Echo", "Whisper", "Deathrain", "Redline", "Backdraft", "Quickdraw"} );
     }
 }
