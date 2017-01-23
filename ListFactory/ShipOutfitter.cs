@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ListFactory.Upgrades;
+using ListFactory.UniqueLayers;
 
 namespace ListFactory
 {
@@ -328,20 +329,35 @@ namespace ListFactory
                     foreach (var talents in crew.ScumCrew)
                     {
                         crew.GenCrew.Add(talents.Key, talents.Value);
-                    }                    
+                    }
                 }
-                
-                foreach (string pilotName in shipB.Ships.Keys)
+                try
                 {
-                    try
-                    {
-                        crew.GenCrew.Remove(pilotName);
-                    }
-                    catch
-                    {
-                        Console.WriteLine(string.Format("Attempted to remove {0} from the crew list, but didn't find them as an available crew.", pilotName));
-                    }
+                    crew.GenCrew.Remove(Ship1Name);
                 }
+                catch
+                {
+                    Console.WriteLine(string.Format("Attempted to remove {0} from the crew list, but didn't find them as an available crew.", Ship1Name));
+                }
+
+                try
+                {
+                    crew.GenCrew.Remove(Ship2Name);
+                }
+                catch
+                {
+                    Console.WriteLine(string.Format("Attempted to remove {0} from the crew list, but didn't find them as an available crew.", Ship2Name));
+                }
+
+                try
+                {
+                    crew.GenCrew.Remove(Ship3Name);
+                }
+                catch
+                {
+                    Console.WriteLine(string.Format("Attempted to remove {0} from the crew list, but didn't find them as an available crew.", Ship3Name));
+                }
+
 
                 dict = crew.GenCrew;
                 Random rand = new Random();
@@ -350,6 +366,11 @@ namespace ListFactory
                 foreach (var weapon in randomDictionary.RandomValues(dict, shuffle).Take(1))
                 {
                     upgradeName = weapon;
+                    UniqueList unique = new UniqueList();
+                    if (unique.UniqueVar.Contains(upgradeName))
+                    {
+                        crew.GenCrew.Remove(upgradeName);
+                    }
                     continue;
                 }
             }
@@ -402,6 +423,20 @@ namespace ListFactory
                 dict = modification.Modifications;
                 Random rand = new Random();
                 numbers = new[] { 0, 1, 2, 3, 4 };
+                shuffle = numbers.OrderBy(n => Guid.NewGuid()).ToArray().First();
+                foreach (var weapon in randomDictionary.RandomValues(dict, shuffle).Take(1))
+                {
+                    upgradeName = weapon;
+                    continue;
+                }
+            }
+            else if (upgradeType.Contains("Bomb"))
+            {
+                Bombs bomb = new Bombs();
+
+                dict = bomb.BombUpgrades;
+                Random rand = new Random();
+                numbers = new[] { 2, 3, 4, 5 };
                 shuffle = numbers.OrderBy(n => Guid.NewGuid()).ToArray().First();
                 foreach (var weapon in randomDictionary.RandomValues(dict, shuffle).Take(1))
                 {

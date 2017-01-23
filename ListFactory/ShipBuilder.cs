@@ -178,6 +178,12 @@ namespace ListFactory
 
             }
 
+            if (CurrentFaction == "Imperial")
+            {
+                dict = listOfShips.ImperialShips;
+
+            }
+
             int shipAudit = 0;
             int pointsSpent = 0;
             Random r = new Random();
