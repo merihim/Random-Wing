@@ -8,5 +8,6 @@ namespace ListFactory.Ships.Imperial.Tie_Interceptor
 {
     class RoyalGuardPilot : AbstractTieInterceptor
     {
+        public string ElitePilotTalent { get; set; }
     }
 }

@@ -8,5 +8,6 @@ namespace ListFactory.Ships.Imperial.Tie_Special_Forces_Fighter
 {
     class Quickdraw : AbstractTieSfFighter
     {
+        public string ElitePilotTalent { get; set; }
     }
 }

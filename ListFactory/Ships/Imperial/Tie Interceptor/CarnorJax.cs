@@ -8,5 +8,6 @@ namespace ListFactory.Ships.Imperial.Tie_Interceptor
 {
     class CarnorJax : AbstractTieInterceptor
     {
+        public string ElitePilotTalent { get; set; }
     }
 }

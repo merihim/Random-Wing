@@ -19,5 +19,7 @@ namespace ListFactory.Ships.Imperial.Tie_Bomber
         public string Bomb1 { get; set; }
 
         public string Bomb2 { get; set; }
+
+        public string Title { get; set; }
     }
 }

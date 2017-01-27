@@ -8,5 +8,6 @@ namespace ListFactory.Ships.Imperial.Tie_Advanced_Prototype
 {
     class TheInquisitor : AbstractTieAdvancedPrototype
     {
+        public string ElitePilotTalent { get; set; }
     }
 }

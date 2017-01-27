@@ -8,5 +8,6 @@ namespace ListFactory.Ships.Imperial.Tie_Defender
 {
     class GlaiveSquadronPilot : AbstractTieDefender
     {
+        public string ElitePilotTalent { get; set; }
     }
 }

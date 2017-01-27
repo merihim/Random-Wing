@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ListFactory.Ships.Imperial.Tie_Bomber
+namespace ListFactory.Ships.Imperial.Tie_Striker
 {
-    class GammaSquadronVeteran : AbstractTieBomber
+    class PureSabacc : AbstractTieStriker
     {
         public string ElitePilotTalent { get; set; }
     }

@@ -8,5 +8,6 @@ namespace ListFactory.Ships.Imperial.Tie_Advanced
 {
     class JunoEclipse : AbstractTieAdvanced
     {
+        public string ElitePilotTalent { get; set; }
     }
 }

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ListFactory.Ships.Imperial.Tie_Fighter
 {
-    class Scourge
+    class Scourge : AbstractTieFighter
     {
+        public string ElitePilotTalent { get; set; }
     }
 }

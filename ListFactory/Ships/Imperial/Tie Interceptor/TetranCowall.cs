@@ -8,5 +8,6 @@ namespace ListFactory.Ships.Imperial.Tie_Interceptor
 {
     class TetranCowall : AbstractTieInterceptor
     {
+        public string ElitePilotTalent { get; set; }
     }
 }

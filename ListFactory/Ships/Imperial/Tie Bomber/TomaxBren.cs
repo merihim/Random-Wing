@@ -8,5 +8,6 @@ namespace ListFactory.Ships.Imperial.Tie_Bomber
 {
     class TomaxBren : AbstractTieBomber
     {
+        public string ElitePilotTalent { get; set; }
     }
 }

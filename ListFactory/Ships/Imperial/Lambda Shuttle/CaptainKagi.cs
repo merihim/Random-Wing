@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ListFactory.Ships.Imperial.Tie_Advanced_Prototype
+namespace ListFactory.Ships.Imperial.Lambda_Shuttle
 {
-    class TieAdvancePrototype : AbstractTieAdvancedPrototype
+    class CaptainKagi : AbstractLambdra
     {
     }
 }

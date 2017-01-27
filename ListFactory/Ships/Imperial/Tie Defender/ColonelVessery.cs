@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace ListFactory.Ships.Imperial.Tie_Defender
 {
     class ColonelVessery : AbstractTieDefender
-    { 
+    {
+        public string ElitePilotTalent { get; set; }
     }
 }

@@ -8,5 +8,6 @@ namespace ListFactory.Ships.Imperial.Tie_First_Order_Fighter
 {
     class ZetaLeader : AbstractTieFoFighter
     {
+        public string ElitePilotTalent { get; set; }
     }
 }

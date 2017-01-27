@@ -8,5 +8,6 @@ namespace ListFactory.Ships.Imperial.Tie_Phantom
 {
     class Echo : AbstractTiePhantom
     {
+        public string ElitePilotTalent { get; set; }
     }
 }

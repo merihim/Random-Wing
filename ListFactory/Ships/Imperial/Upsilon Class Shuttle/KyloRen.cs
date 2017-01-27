@@ -8,5 +8,6 @@ namespace ListFactory.Ships.Imperial.Upsilon_Class_Shuttle
 {
     class KyloRen : AbstractUpsilonClassShuttle
     {
+        public string ElitePilotTalent { get; set; }        
     }
 }

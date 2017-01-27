@@ -61,7 +61,6 @@
     <Compile Include="Ships\Imperial\Tie Advanced Prototype\BaronOfTheEmpire.cs" />
     <Compile Include="Ships\Imperial\Tie Advanced Prototype\SienarTestPilot.cs" />
     <Compile Include="Ships\Imperial\Tie Advanced Prototype\TheInquisitor.cs" />
-    <Compile Include="Ships\Imperial\Tie Advanced Prototype\TieAdvancePrototype.cs" />
     <Compile Include="Ships\Imperial\Tie Advanced Prototype\ValenRudor.cs" />
     <Compile Include="Ships\Imperial\Tie Advanced\AbstractTieAdvanced.cs" />
     <Compile Include="Ships\Imperial\Tie Advanced\CommanderAlozen.cs" />
@@ -140,7 +139,12 @@
     <Compile Include="Ships\Imperial\Tie Special Forces Fighter\Quickdraw.cs" />
     <Compile Include="Ships\Imperial\Tie Special Forces Fighter\ZetaSpecialist.cs" />
     <Compile Include="Ships\Imperial\Tie Striker\AbstractTieStriker.cs" />
+    <Compile Include="Ships\Imperial\Tie Striker\BlackSquadronScout.cs" />
+    <Compile Include="Ships\Imperial\Tie Striker\Countdown.cs" />
     <Compile Include="Ships\Imperial\Tie Striker\Duchess.cs" />
+    <Compile Include="Ships\Imperial\Tie Striker\ImperialTrainee.cs" />
+    <Compile Include="Ships\Imperial\Tie Striker\PureSabacc.cs" />
+    <Compile Include="Ships\Imperial\Tie Striker\ScarifDefender.cs" />
     <Compile Include="Ships\Imperial\Upsilon Class Shuttle\AbstractUpsilonClassShuttle.cs" />
     <Compile Include="Ships\Imperial\Upsilon Class Shuttle\KyloRen.cs" />
     <Compile Include="Ships\Imperial\Upsilon Class Shuttle\LieutenantDormitz.cs" />
@@ -232,6 +236,7 @@
     <Compile Include="Upgrades\Modification.cs" />
     <Compile Include="Upgrades\SalvagedAstromech.cs" />
     <Compile Include="Upgrades\Systems.cs" />
+    <Compile Include="Upgrades\Tech.cs" />
     <Compile Include="Upgrades\Torpedo.cs" />
   </ItemGroup>
   <ItemGroup>

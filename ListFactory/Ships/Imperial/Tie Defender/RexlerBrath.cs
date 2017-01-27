@@ -8,5 +8,6 @@ namespace ListFactory.Ships.Imperial.Tie_Defender
 {
     class RexlerBrath : AbstractTieDefender
     {
+        public string ElitePilotTalent { get; set; }
     }
 }

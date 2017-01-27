@@ -8,5 +8,6 @@ namespace ListFactory.Ships.Imperial.Tie_First_Order_Fighter
 {
     class AbstractTieFoFighter : Baseship
     {
+        public string Tech { get; set; }
     }
 }

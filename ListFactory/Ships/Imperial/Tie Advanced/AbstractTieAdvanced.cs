@@ -8,5 +8,8 @@ namespace ListFactory.Ships.Imperial.Tie_Advanced
 {
     class AbstractTieAdvanced : Baseship
     {
+        public string Missile { get; set; }
+
+        public string Title { get; set; }
     }
 }

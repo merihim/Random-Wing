@@ -8,5 +8,6 @@ namespace ListFactory.Ships.Imperial.Tie_Advanced_Prototype
 {
     class BaronOfTheEmpire : AbstractTieAdvancedPrototype
     {
+        public string ElitePilotTalent { get; set; }
     }
 }

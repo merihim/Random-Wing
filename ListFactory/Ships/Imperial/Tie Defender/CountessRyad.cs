@@ -8,5 +8,6 @@ namespace ListFactory.Ships.Imperial.Tie_Defender
 {
     class CountessRyad : AbstractTieDefender
     {
+        public string ElitePilotTalent { get; set; }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ListFactory.Ships.Imperial.Tie_Fighter
 {
-    class AcademyPilot
+    class AcademyPilot : AbstractTieFighter
     {
     }
 }

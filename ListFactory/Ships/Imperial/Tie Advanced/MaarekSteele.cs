@@ -8,5 +8,6 @@ namespace ListFactory.Ships.Imperial.Tie_Advanced
 {
     class MaarekSteele : AbstractTieAdvanced
     {
+        public string ElitePilotTalent { get; set; }
     }
 }
