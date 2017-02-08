@@ -1,7 +1,4 @@
-# Random-Wing
-A random list generator for X-Wing TMG
-![]({{site.baseurl}}//RANDOM-WING.png)
+#Random-Wing
+<img src="http://i.imgur.com/As0Wtom.png" alt="" width="321" height="256">
 
-Enter a faction or factionless, your list limit, the amount you want to spend on ships, and then let it randomly decide what your list is.
-
-
+A random list generator for the X-Wing TMG
