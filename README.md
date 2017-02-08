@@ -1,4 +1,7 @@
 # Random-Wing
-Ranom List Generator
+A random list generator for X-Wing TMG
+![]({{site.baseurl}}//RANDOM-WING.png)
 
-generates a list out of possible ship/upgrade combinations
+Enter a faction or factionless, your list limit, the amount you want to spend on ships, and then let it randomly decide what your list is.
+
+
