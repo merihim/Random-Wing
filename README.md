@@ -20,7 +20,9 @@ A random list generator for the X-Wing TMG
 
 
 
-
+```sh
+./go build
+```
 
 
 
